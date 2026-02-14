@@ -1,9 +1,7 @@
-# Docker-Lab-1
-
 # Docker Lab 1: ML Model Training Container
 
 ## Overview
-Containerized a machine learning training script using Docker. The script trains a Random Forest classifier on the Iris dataset and saves the model.
+Containerized a machine learning training script using Docker. The script trains an AdaBoost classifier on the Wine dataset and saves the model.
 
 ---
 
@@ -24,9 +22,10 @@ DOCKER LAB 1/
 ## What I Did
 
 ### 1. Created ML Training Script
-- Trained Random Forest classifier on Iris dataset
+- Trained AdaBoost classifier on Wine dataset (178 samples, 13 features, 3 classes)
+- Used Decision Tree stumps as base estimators
 - Evaluated model accuracy
-- Saved trained model to `iris_model.pkl`
+- Saved trained model to `wine_model.pkl`
 
 ### 2. Created Dockerfile
 ```dockerfile
@@ -48,6 +47,7 @@ docker run --name ml-training-container ml-training:v1.2
 
 # Export image
 docker save ml-training:v1.2 > ml-training.tar
+# Updated the .tar file name in .gitignore as the file size is very big to be uploaded in Github.
 ```
 
 ---
